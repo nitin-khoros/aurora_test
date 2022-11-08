@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    environment {
+        CREDS = credentials('jira-creds')
+    }
     stages {
         stage('Script 1') {
             steps {
