@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        CREDS = credentials('jira-creds')
+        CREDS = credentials('jenkins-token')
     }
     stages {
         stage('Script 1') {
