@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('Script 1') {
             steps {
-                sh "chmod +x $WORKSPACE/Scripts/1.sh && $WORKSPACE/Scripts/1.sh"
-                echo "${VAR1}"
+                script {sh "chmod +x $WORKSPACE/Scripts/1.sh && $WORKSPACE/Scripts/1.sh"}
+//                 echo "${VAR1}"
             }
         }
         stage('Script 2') {
