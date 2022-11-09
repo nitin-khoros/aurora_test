@@ -20,5 +20,14 @@ pipeline {
                 sh "chmod +x $WORKSPACE/Scripts/3.sh && $WORKSPACE/Scripts/3.sh"
             }
         }
+        stage('jenkins') {
+            steps {
+                script {
+                    def props = readProperties  file:'env.properties'
+                    def VAR2 = props['VAR2']
+                    echo "VAR2 = ${VAR2}"
+                }
+            }
+        }
     }
 }
