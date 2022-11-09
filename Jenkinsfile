@@ -15,5 +15,10 @@ pipeline {
                 sh "chmod +x $WORKSPACE/Scripts/2.sh && $WORKSPACE/Scripts/2.sh"
             }
         }
+        stage('Script 3') {
+            steps {
+                sh "chmod +x $WORKSPACE/Scripts/3.sh && $WORKSPACE/Scripts/3.sh"
+            }
+        }
     }
 }
