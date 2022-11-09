@@ -1,5 +1,4 @@
 #!/bin/bash
-source ../envFile
 
 echo "This is Script 2"
 echo "Username & password is $CREDS"
