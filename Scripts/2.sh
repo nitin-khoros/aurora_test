@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source play.properties
 echo "This is Script 2"
 echo "Username & password is $CREDS"
 echo "value of VAR1 fetched from script 1 is $VAR1"
