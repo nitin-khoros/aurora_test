@@ -2,7 +2,7 @@
 
 echo "This is Script 1"
 VAR1=one
-echo VAR1=one >> play.properties
+echo VAR1=one >> env.properties
 echo "***from shell script"
 echo "VAR1 value is $VAR1"
 echo "***from shell script"
