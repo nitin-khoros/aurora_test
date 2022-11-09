@@ -1,9 +1,3 @@
-def loadEnvs(propFile) {
-  props = readProperties(propFile)
-  props.each { key, val ->
-    env[key] = val
-  }
-}
 pipeline {
     agent any
     environment {
@@ -13,18 +7,19 @@ pipeline {
         stage('Script 1') {
             steps {
                 script {
-                    loadEnvs('env.props')
+                  writeFile file: 'play.properties', text: ''
+                  sh "chmod +x $WORKSPACE/Scripts/1.sh && $WORKSPACE/Scripts/1.sh"
+                  readFile 'play.properties'
+                  echo "${VAR1}"
                 }
-                sh "chmod +x $WORKSPACE/Scripts/1.sh && $WORKSPACE/Scripts/1.sh"
-//                 echo "${VAR1}"
             }
         }
         stage('Script 2') {
             steps {
                 script {
-                    loadEnvs('env.props')
+                  readFile 'play.properties'
+                  sh "chmod +x $WORKSPACE/Scripts/2.sh && $WORKSPACE/Scripts/2.sh"
                 }
-                sh "chmod +x $WORKSPACE/Scripts/2.sh && $WORKSPACE/Scripts/2.sh"
             }
         }
     }
